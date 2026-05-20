@@ -9,6 +9,27 @@ public class Demo5 {
         int sum = 11; 
         System.out.println(coinChange(coins, sum));
     }
+
+    //! Greedy Approach
+    /*public static int coinChange(int[] coins,int sum)
+    {
+        Arrays.sort(coins);
+        int count = 0;
+        int remaining = sum;
+
+        for (int i = coins.length - 1; i >= 0; i--) {
+            while (remaining >= coins[i]) {
+                remaining = remaining-coins[i];
+                count++;
+            }
+        }
+        if (remaining == 0){
+           return count;
+        }
+        else{
+           return -1;
+        }
+    }*/
     
     //! Memoization Approach
     /*public static int coinChange(int[] coins, int amount) {
@@ -18,19 +39,21 @@ public class Demo5 {
     }
 
     public static int helper(int[] coins, int rem, int[] dp) {
-        if (rem == 0) return 0;
-
-        if (rem < 0) return -1;
-
-        if (dp[rem] != -2) return dp[rem];
-
+        if (rem == 0){
+          return 0;
+        }
+        if (rem < 0) {
+          return -1;
+        }
+        if (dp[rem] != -2){
+          return dp[rem];
+        } 
         int mini = Integer.MAX_VALUE;
-
         for (int coin : coins) {
-           
             int res = helper(coins, rem - coin, dp);
-            if (res >= 0 && res < mini)
-                mini = 1 + res;
+            if (res >= 0 && res < mini){
+               mini = 1 + res;
+            }
         }
         dp[rem] = (mini == Integer.MAX_VALUE) ? -1 : mini;
         return dp[rem];
