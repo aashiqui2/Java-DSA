@@ -7,3 +7,7 @@ Problem: [70. Climbing Stairs ](https://leetcode.com/problems/climbing-stairs/de
 
 3. House Robery I
 Problem: [198. House Robery ](https://leetcode.com/problems/house-robber/description/)
+
+4. 
+5. 
+6. 

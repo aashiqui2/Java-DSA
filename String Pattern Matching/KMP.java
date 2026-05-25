@@ -2,8 +2,10 @@ public class KMP {
     public static void main(String[] args) {
         /* String text = "abcdabcabcdf";
         String pattern = "abcdf"; */
-        String text = "aaaaaab";
-        String pattern = "aaab";
+       /*  String text = "aaaaaab";
+        String pattern = "aaab"; */
+         String text = "BABABABABCABABCABAB";
+        String pattern = "ABABCABAB";
 
         int n = text.length();
         int m = pattern.length();
