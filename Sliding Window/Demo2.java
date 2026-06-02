@@ -1,45 +1,22 @@
-import java.util.*;
 public class Demo2 {
-    //! Brute Force approach
-    public static List<String> repeatedDNA(String s) {
-        List<String> result = new ArrayList<>();
-        HashSet<String> added = new HashSet<>();
-        for (int i = 0; i <= s.length() - 10; i++) {
-            String current = s.substring(i, i + 10);
-            for (int j = i + 1; j <= s.length() - 10; j++) {
-                String next = s.substring(j, j + 10);
-                if (current.equals(next)) {
-                    if (!added.contains(current)) {
-                        result.add(current);
-                        added.add(current);
-                    }
-                    break;
-                }
-            }
+    public double findMaxAverage(int[] nums, int k) {
+         int ws = 0;
+        for (int i = 0; i < k; i++) {
+            ws += nums[i];
         }
-        return result;
-    }
-    //? Time Complexity: O(n^2)
-
-    //! Sliding Window Approach
-    public static List<String> findRepeatedDnaSequences(String s) {
-        HashSet<String> seen = new HashSet<>();
-        HashSet<String> repeated = new HashSet<>();
-        for (int i = 0; i <= s.length() - 10; i++) {
-            String current = s.substring(i, i + 10);
-            if (seen.contains(current)) {
-                repeated.add(current);
-            } else {
-                seen.add(current);
-            }
+        int max = ws;
+  
+        for (int i = k; i < nums.length; i++) {
+            ws = ws + nums[i] - nums[i - k];
+            max = Math.max(ws, max);
         }
-        return new ArrayList<>(repeated);
+        return (double) max / k;
     }
-    //? Time Complexity: O(n)
-
-
     public static void main(String[] args) {
-        String s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT";
-        System.out.println(repeatedDNA(s));
+        int nums[] = {1,12,-5,-6,50,3};
+        int k = 4;
+        System.out.println(new Demo2().findMaxAverage(nums,k));
     }
 }
+//! Time Complexity: O(n)
+//! Link:(643) https://leetcode.com/problems/maximum-average-subarray-i/description/

@@ -74,8 +74,8 @@ public class Demo7 {
         for (int[] row : dp) {
             Arrays.fill(row, -1);
         }
-        int maxProfit = knapsack(weights, profits, capacity,0,dp);
-        //int maxProfit = knapsack(weights, profits, capacity);
+        // int maxProfit = knapsack(weights, profits, capacity,0,dp);
+        int maxProfit = knapsack(weights, profits, capacity);
         System.out.println("Maximum Profit = " + maxProfit);
     }
 }

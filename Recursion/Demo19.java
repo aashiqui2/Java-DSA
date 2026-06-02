@@ -1,7 +1,17 @@
 import java.util.*;
 public class Demo19 {
-    public static String[] keypad={"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
-
+    public static String[] keypad={
+        "",
+        "",
+        "abc",
+        "def",
+        "ghi",
+        "jkl",
+        "mno",
+        "pqrs",
+        "tuv",
+        "wxyz"
+    };
     public static void printComb(String str,int idx,String combination)
     {
         if(idx==str.length())
@@ -19,6 +29,6 @@ public class Demo19 {
     public static void main(String[] args) {
         String str="24";
         printComb(str, 0, "");
-    }
+    } 
 }
 // Time Complexity :O(4^n)

@@ -4,7 +4,7 @@ public class KMP {
         String pattern = "abcdf"; */
        /*  String text = "aaaaaab";
         String pattern = "aaab"; */
-         String text = "BABABABABCABABCABAB";
+        String text = "BABABABABCABABCABAB";
         String pattern = "ABABCABAB";
 
         int n = text.length();
@@ -13,7 +13,7 @@ public class KMP {
 
        kmpSearch(text, pattern,n,m);
     }
-
+    //! Brute Force Approach
     /* public static void NaivePatternMatching(String text, String pattern, int n, int m) {
         for (int i = 0; i <= n - m; i++) {
             int j;
@@ -28,6 +28,15 @@ public class KMP {
         }
     } */
     // ! Time Complexity: O(n*m)
+
+   /*  public int strStr(String haystack, String needle) {
+        for(int i = 0, j = needle.length(); j<=haystack.length(); i++,j++){
+            if(haystack.substring(i,j).equals(needle)){
+                return i;
+            }
+        }
+        return -1;
+    } */
 
     public static int[] buildLPS(String pattern) {
         int m = pattern.length();

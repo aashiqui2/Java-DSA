@@ -3,8 +3,8 @@ import java.util.List;
 
 public class Demo20 {
     public static void generateSubsets(int[] arr, int index, List<Integer> current,
-            List<List<Integer>> result) {
-
+    List<List<Integer>> result) {
+        
         if (index == arr.length) {
             result.add(new ArrayList<>(current));
             return;
